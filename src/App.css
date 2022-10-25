@@ -11,10 +11,8 @@
   --num-color: hsl(221, 14%, 31%);
   --op-key: hsl(0, 0%, 100%);
   --op-key-2: hsl(0, 0%, 100%);
-
   --number-fs: 2rem;
   --main-fw: 700;
-
   --size-100: 0.25em;
   --size-200: 0.5em;
   --size-300: 0.75em;
@@ -328,7 +326,7 @@ main {
 }
 
 .key-text {
-  font-size: 1.5rem
+  font-size: 1.5rem;
 }
 
 @media screen and (min-width: 40em) {
@@ -340,6 +338,7 @@ main {
     font-size: var(--number-fs);
   }
 }
+
 /* ------------------ END COMPONENT CLASSES----------------------- */
 
 /* ------------------ START UTILITY CLASSES----------------------- */
@@ -385,6 +384,7 @@ main {
 .p-1 {
   padding: var(--size-100);
 }
+
 .p-8 {
   padding: var(--size-600);
 }
@@ -414,4 +414,5 @@ main {
 .no-shadow {
   box-shadow: none;
 }
+
 /* ------------------ END UTILITY CLASSES----------------------- */
