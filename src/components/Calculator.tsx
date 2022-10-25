@@ -11,24 +11,24 @@ class Calculator extends React.Component {
       <section className="calc">
         <Screen />
         <div className="numbers-container bg-toggle mt-6 p-8 rounded">
-          <Key area="seven" key="7" />
-          <Key area="eight" key="8" />
-          <Key area="nine" key="9" />
-          <Key area="del" key="DEL" />
-          <Key area="four" key="4" />
-          <Key area="five" key="5" />
-          <Key area="six" key="6" />
-          <Key area="plus" key="+" />
-          <Key area="one" key="1" />
-          <Key area="two" key="2" />
-          <Key area="three" key="3" />
-          <Key area="subtract" key="-" />
-          <Key area="dot" key="." />
-          <Key area="zero" key="0" />
-          <Key area="divide" key="/" />
-          <Key area="multiple" key="*" />
-          <Key area="reset" key="RESET" />
-          <Key area="equal" key="=" />
+          <Key area="seven" keyValue="7" />
+          <Key area="eight" keyValue="8" />
+          <Key area="nine" keyValue="9" />
+          <Key area="del" keyValue="DEL" />
+          <Key area="four" keyValue="4" />
+          <Key area="five" keyValue="5" />
+          <Key area="six" keyValue="6" />
+          <Key area="plus" keyValue="+" />
+          <Key area="one" keyValue="1" />
+          <Key area="two" keyValue="2" />
+          <Key area="three" keyValue="3" />
+          <Key area="subtract" keyValue="-" />
+          <Key area="dot" keyValue="." />
+          <Key area="zero" keyValue="0" />
+          <Key area="divide" keyValue="/" />
+          <Key area="multiple" keyValue="*" />
+          <Key area="reset" keyValue="RESET" />
+          <Key area="equal" keyValue="=" />
         </div>
       </section>
     );
