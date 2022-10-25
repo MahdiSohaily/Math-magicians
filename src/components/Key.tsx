@@ -1,9 +1,9 @@
 import React from 'react';
-class Key extends React.Component<{ area: string; key: number }> {
+class Key extends React.Component<{ area: string; key: string }> {
   constructor(
     props:
-      | { area: string; key: number }
-      | Readonly<{ area: string; key: number }>
+      | { area: string; key: string }
+      | Readonly<{ area: string; key: string }>
   ) {
     super(props);
   }

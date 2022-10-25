@@ -1,39 +1,417 @@
-.App {
-  text-align: center;
+:root {
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --reset-key-bg: hsl(225, 21%, 49%);
+  --reset-key-shadow: hsl(224, 28%, 35%);
+  --bg-equal-key: hsl(6, 63%, 50%);
+  --bg-equal-key-shadow: hsl(6, 70%, 34%);
+  --bg-num-key: hsl(30, 25%, 89%);
+  --bg-num-key-shadow: hsl(28, 16%, 65%);
+  --num-color: hsl(221, 14%, 31%);
+  --op-key: hsl(0, 0%, 100%);
+  --op-key-2: hsl(0, 0%, 100%);
+
+  --number-fs: 2rem;
+  --main-fw: 700;
+
+  --size-100: 0.25em;
+  --size-200: 0.5em;
+  --size-300: 0.75em;
+  --size-400: 1em;
+  --size-500: 1.25em;
+  --size-600: 1.5em;
+  --size-700: 1.75em;
+  --size-800: 2em;
+  --size-900: 2.5em;
+  --size-xl: 4em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Dark theme colors */
+[data-color-scheme='dark'] {
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --reset-key-bg: hsl(225, 21%, 49%);
+  --reset-key-shadow: hsl(224, 28%, 35%);
+  --bg-equal-key: hsl(6, 63%, 50%);
+  --bg-equal-key-shadow: hsl(6, 70%, 34%);
+  --bg-num-key: hsl(30, 25%, 89%);
+  --bg-num-key-shadow: hsl(28, 16%, 65%);
+  --num-color: hsl(221, 14%, 31%);
+  --op-key: hsl(0, 0%, 100%);
+  --op-key-2: hsl(0, 0%, 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Light theme colors */
+[data-color-scheme='light'] {
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+  --reset-key-bg: hsl(185, 42%, 37%);
+  --reset-key-shadow: hsl(185, 58%, 25%);
+  --bg-equal-key: hsl(25, 98%, 40%);
+  --bg-equal-key-shadow: hsl(25, 99%, 27%);
+  --bg-num-key: hsl(45, 7%, 89%);
+  --bg-num-key-shadow: hsl(35, 11%, 61%);
+  --num-color: hsl(60, 10%, 19%);
+  --op-key: hsl(0, 0%, 100%);
+  --op-key-2: hsl(0, 0%, 100%);
+}
+
+/* Purple theme colors */
+[data-color-scheme='purple'] {
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+  --reset-key-bg: hsl(281, 89%, 26%);
+  --reset-key-shadow: hsl(285, 91%, 52%);
+  --bg-equal-key: hsl(176, 100%, 44%);
+  --bg-equal-key-shadow: hsl(177, 92%, 70%);
+  --bg-num-key: hsl(268, 47%, 21%);
+  --bg-num-key-shadow: hsl(290, 70%, 36%);
+  --num-color: hsl(52, 100%, 62%);
+  --op-key: hsl(0, 0%, 100%);
+  --op-key-2: hsl(198, 20%, 13%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* ------------------ START COMPONENT CLASSES----------------------- */
+main {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.calc {
+  width: 540px;
+  margin: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Header section styles */
+.calc-header,
+.theme-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--size-600);
+}
+
+.theme {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.track-container {
+  width: 70px;
+}
+
+.track-rail {
+  border-radius: 100vmax;
+  position: relative;
+  height: 25px;
+}
+
+.track {
+  width: 17px;
+  left: 3px;
+  height: 17px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.3s ease-in;
+}
+
+.track:hover {
+  cursor: pointer;
+}
+
+.theme-state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 3px;
+}
+
+/* Screen section styles */
+.result {
+  font-size: 40px;
+  text-align: right;
+}
+
+/* Keys section styles */
+.numbers-container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: var(--size-400);
+  grid-template-areas:
+    'seven eight nine del'
+    'four five six plus'
+    'one two three subtract'
+    'dot zero divide multiple'
+    'reset reset equal equal';
+}
+
+@media screen and (min-width: 40em) {
+  .numbers-container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    gap: var(--size-600);
+    grid-template-areas:
+      'seven eight nine del'
+      'four five six plus'
+      'one two three subtract'
+      'dot zero divide multiple'
+      'reset reset equal equal';
+  }
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.del {
+  grid-area: del;
+}
+
+.del span {
+  font-size: 24px;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.subtract {
+  grid-area: subtract;
+}
+
+.dot {
+  grid-area: dot;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.multiple {
+  grid-area: multiple;
+}
+
+.reset {
+  grid-area: reset;
+}
+
+.reset span {
+  font-size: 24px;
+}
+
+.equal {
+  grid-area: equal;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+
+.key:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.key-text {
+  font-size: 1.5rem
+}
+
+@media screen and (min-width: 40em) {
+  .key {
+    padding: 3px;
   }
 
-  to {
-    transform: rotate(360deg);
+  .key-text {
+    font-size: var(--number-fs);
   }
 }
+/* ------------------ END COMPONENT CLASSES----------------------- */
+
+/* ------------------ START UTILITY CLASSES----------------------- */
+.bg-main {
+  background-color: var(--main-bg);
+}
+
+.bg-toggle {
+  background-color: var(--toggle-bg);
+}
+
+.bg-screen {
+  background-color: var(--screen-bg);
+}
+
+.reset-key-bg {
+  background-color: var(--reset-key-bg);
+  box-shadow: 0 4px 0 -1px var(--reset-key-shadow);
+}
+
+.bg-equal-key {
+  background-color: var(--bg-equal-key);
+  box-shadow: 0 4px 0 -1px var(--bg-equal-key-shadow);
+}
+
+.bg-num-key {
+  background-color: var(--bg-num-key);
+  box-shadow: 0 4px 0 -1px var(--bg-num-key-shadow);
+}
+
+.num-text {
+  color: var(--num-color);
+}
+
+.text-operation {
+  color: var(--op-key);
+}
+
+.text-operation-2 {
+  color: var(--op-key-2);
+}
+
+.p-1 {
+  padding: var(--size-100);
+}
+.p-8 {
+  padding: var(--size-600);
+}
+
+@media screen and (min-width: 40em) {
+  .p-8 {
+    padding: var(--size-800);
+  }
+}
+
+.mt-7 {
+  margin-top: var(--size-700);
+}
+
+.mt-8 {
+  margin-top: var(--size-800);
+}
+
+.mt-6 {
+  margin-top: var(--size-600);
+}
+
+.rounded {
+  border-radius: 0.5em;
+}
+
+.no-shadow {
+  box-shadow: none;
+}
+/* ------------------ END UTILITY CLASSES----------------------- */
