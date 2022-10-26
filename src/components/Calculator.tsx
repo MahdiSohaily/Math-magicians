@@ -1,7 +1,8 @@
 import React from 'react';
 import Screen from './Screen';
 import Key from './Key';
-
+import Big from 'big.js';
+const b = new Big(3)
 class Calculator extends React.Component {
   constructor(props: object) {
     super(props);
