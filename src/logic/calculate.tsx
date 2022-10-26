@@ -13,7 +13,10 @@ function isNumber(item: string) {
  *   next:String       the next number to be operated on with the total
  *   operation:String  +, -, etc.
  */
-export default function calculate(obj, buttonName: string) {
+export default function calculate(
+  obj: { total: string; next: string; operation: string },
+  buttonName: string
+) {
   if (buttonName === 'AC') {
     return {
       total: null,
