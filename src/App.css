@@ -41,22 +41,6 @@
   --op-key-2: hsl(0, 0%, 100%);
 }
 
-/* Light theme colors */
-[data-color-scheme='light'] {
-  --main-bg: hsl(0, 0%, 90%);
-  --toggle-bg: hsl(0, 5%, 81%);
-  --screen-bg: hsl(0, 0%, 93%);
-  --reset-key-bg: hsl(185, 42%, 37%);
-  --reset-key-shadow: hsl(185, 58%, 25%);
-  --bg-equal-key: hsl(25, 98%, 40%);
-  --bg-equal-key-shadow: hsl(25, 99%, 27%);
-  --bg-num-key: hsl(45, 7%, 89%);
-  --bg-num-key-shadow: hsl(35, 11%, 61%);
-  --num-color: hsl(60, 10%, 19%);
-  --op-key: hsl(0, 0%, 100%);
-  --op-key-2: hsl(0, 0%, 100%);
-}
-
 /* Box sizing rules */
 *,
 *::before,
