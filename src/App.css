@@ -352,6 +352,7 @@ main {
 
 .bg-screen {
   background-color: var(--screen-bg);
+  height: 120px;
 }
 
 .reset-key-bg {
