@@ -1,35 +1,36 @@
 import React from 'react';
 import Screen from './Screen';
 import Key from './Key';
-import Big from 'big.js';
-const b = new Big(3)
 class Calculator extends React.Component {
-  constructor(props: object) {
-    super(props);
-  }
+  state = {
+    keys: [
+      { id: 1, area: 'seven', value: '7' },
+      { id: 1, area: 'eight', value: '8' },
+      { id: 1, area: 'nine', value: '9' },
+      { id: 1, area: 'del', value: 'DEL' },
+      { id: 1, area: 'four', value: '4' },
+      { id: 1, area: 'five', value: '5' },
+      { id: 1, area: 'six', value: '6' },
+      { id: 1, area: 'plus', value: '+' },
+      { id: 1, area: 'one', value: '1' },
+      { id: 1, area: 'two', value: '2' },
+      { id: 1, area: 'three', value: '3' },
+      { id: 1, area: 'subtract', value: '-' },
+      { id: 1, area: 'dot', value: '.' },
+      { id: 1, area: 'zero', value: '0' },
+      { id: 1, area: 'divide', value: '/' },
+      { id: 1, area: 'multiple', value: '*' },
+      { id: 1, area: 'reset', value: 'RESET' },
+      { id: 1, area: 'equal', value: '=' },
+    ],
+  };
   render(): React.ReactNode {
+    
     return (
       <section className="calc">
         <Screen />
         <div className="numbers-container bg-toggle mt-6 p-8 rounded">
-          <Key area="seven" keyValue="7" />
-          <Key area="eight" keyValue="8" />
-          <Key area="nine" keyValue="9" />
-          <Key area="del" keyValue="DEL" />
-          <Key area="four" keyValue="4" />
-          <Key area="five" keyValue="5" />
-          <Key area="six" keyValue="6" />
-          <Key area="plus" keyValue="+" />
-          <Key area="one" keyValue="1" />
-          <Key area="two" keyValue="2" />
-          <Key area="three" keyValue="3" />
-          <Key area="subtract" keyValue="-" />
-          <Key area="dot" keyValue="." />
-          <Key area="zero" keyValue="0" />
-          <Key area="divide" keyValue="/" />
-          <Key area="multiple" keyValue="*" />
-          <Key area="reset" keyValue="RESET" />
-          <Key area="equal" keyValue="=" />
+          {keys}
         </div>
       </section>
     );
