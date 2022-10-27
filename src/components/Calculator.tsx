@@ -6,35 +6,37 @@ class Calculator extends React.Component {
   state = {
     keys: [
       { id: 1, area: 'seven', value: '7' },
-      { id: 1, area: 'eight', value: '8' },
-      { id: 1, area: 'nine', value: '9' },
-      { id: 1, area: 'del', value: 'DEL' },
-      { id: 1, area: 'four', value: '4' },
-      { id: 1, area: 'five', value: '5' },
-      { id: 1, area: 'six', value: '6' },
-      { id: 1, area: 'plus', value: '+' },
-      { id: 1, area: 'one', value: '1' },
-      { id: 1, area: 'two', value: '2' },
-      { id: 1, area: 'three', value: '3' },
-      { id: 1, area: 'subtract', value: '-' },
-      { id: 1, area: 'dot', value: '.' },
-      { id: 1, area: 'zero', value: '0' },
-      { id: 1, area: 'divide', value: '/' },
-      { id: 1, area: 'multiple', value: '*' },
-      { id: 1, area: 'reset', value: 'RESET' },
-      { id: 1, area: 'equal', value: '=' },
+      { id: 2, area: 'eight', value: '8' },
+      { id: 3, area: 'nine', value: '9' },
+      { id: 4, area: 'del', value: 'DEL' },
+      { id: 5, area: 'four', value: '4' },
+      { id: 6, area: 'five', value: '5' },
+      { id: 7, area: 'six', value: '6' },
+      { id: 8, area: 'plus', value: '+' },
+      { id: 9, area: 'one', value: '1' },
+      { id: 10, area: 'two', value: '2' },
+      { id: 11, area: 'three', value: '3' },
+      { id: 12, area: 'subtract', value: '-' },
+      { id: 13, area: 'dot', value: '.' },
+      { id: 14, area: 'zero', value: '0' },
+      { id: 15, area: 'divide', value: '/' },
+      { id: 16, area: 'multiple', value: '*' },
+      { id: 17, area: 'reset', value: 'RESET' },
+      { id: 18, area: 'equal', value: '=' },
     ],
     obj: { total: '0', next: '', operation: '' },
   };
 
-  onClickListener = (event: Event) => {
-    const element = event.target as HTMLElement;
-    this.setState(() => calculate(this.state.obj, element.innerText));
+  onClickListener = (event: React.MouseEvent<HTMLElement>) => {
+    // const element = event.target as HTMLElement;
+    // this.setState(() => calculate(this.state.obj, element.innerText));
+    alert('clicked');
   };
 
   render(): React.ReactNode {
     const keys = this.state.keys.map((key) => (
       <Key
+        key={key.id}
         area={key.area}
         keyValue={key.value}
         clickEvent={this.onClickListener}
