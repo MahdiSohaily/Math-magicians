@@ -25,7 +25,9 @@ class Calculator extends React.Component {
     ],
   };
   render(): React.ReactNode {
-    
+    const keys = this.state.keys.map((key) => (
+      <Key area={key.area} keyValue={key.value} />
+    ));
     return (
       <section className="calc">
         <Screen />
