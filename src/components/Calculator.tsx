@@ -28,9 +28,9 @@ class Calculator extends React.Component {
   };
 
   onClickListener = (event: React.MouseEvent<HTMLElement>) => {
-    // const element = event.target as HTMLElement;
-    // this.setState(() => calculate(this.state.obj, element.innerText));
-    alert('clicked');
+    const element = event.target as HTMLElement;
+    this.setState(() => calculate(this.state.obj, element.getAttribute('data-key')!));
+    console.log(calculate(this.state.obj, element.getAttribute('data-key')!));
   };
 
   render(): React.ReactNode {
@@ -44,7 +44,11 @@ class Calculator extends React.Component {
     ));
     return (
       <section className="calc">
-        <Screen />
+        <Screen
+          total={this.state.obj.total}
+          operation={this.state.obj.operation}
+          next={this.state.obj.next}
+        />
         <div className="numbers-container bg-toggle mt-6 p-8 rounded">
           {keys}
         </div>

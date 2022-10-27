@@ -10,8 +10,8 @@ class Key extends React.Component<{ area: string; keyValue: string; clickEvent:(
 
   render(): React.ReactNode {
     return (
-      <div className={`key bg-num-key rounded ${this.props.area}`} onClick={this.props.clickEvent}>
-        <span className="num-text key-text">{this.props.keyValue}</span>
+      <div className={`key bg-num-key rounded ${this.props.area}`} onClick={this.props.clickEvent} data-key={this.props.keyValue}>
+        <span className="num-text key-text" data-key={this.props.keyValue}>{this.props.keyValue}</span>
       </div>
     );
   }
