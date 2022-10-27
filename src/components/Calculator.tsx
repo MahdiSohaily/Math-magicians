@@ -23,6 +23,11 @@ class Calculator extends React.Component {
       { id: 1, area: 'reset', value: 'RESET' },
       { id: 1, area: 'equal', value: '=' },
     ],
+    obj: { total: 0, next: '', operation: '' },
+  };
+
+  onClickListener = (event: Event) => {
+    setObj(calculate(obj, event.target.innerText));
   };
   render(): React.ReactNode {
     const keys = this.state.keys.map((key) => (
