@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 import Screen from './Screen';
 import Key from './Key';
@@ -29,8 +30,11 @@ class Calculator extends React.Component {
 
   onClickListener = (event: React.MouseEvent<HTMLElement>) => {
     const element = event.target as HTMLElement;
-    this.setState(() => calculate(this.state.obj, element.getAttribute('data-key')!));
-    console.log(calculate(this.state.obj, element.getAttribute('data-key')!));
+    const buttonName = element.getAttribute('data-key')!
+      ? element.getAttribute('data-key')!
+      : '';
+    this.setState(() => calculate(this.state.obj, buttonName));
+    console.log(calculate(this.state.obj, buttonName));
   };
 
   render(): React.ReactNode {
