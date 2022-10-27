@@ -1,6 +1,7 @@
 import React from 'react';
 import Screen from './Screen';
 import Key from './Key';
+import calculate from '../logic/calculate';
 class Calculator extends React.Component {
   state = {
     keys: [
@@ -23,15 +24,21 @@ class Calculator extends React.Component {
       { id: 1, area: 'reset', value: 'RESET' },
       { id: 1, area: 'equal', value: '=' },
     ],
-    obj: { total: 0, next: '', operation: '' },
+    obj: { total: '0', next: '', operation: '' },
   };
 
   onClickListener = (event: Event) => {
-    setObj(calculate(obj, event.target.innerText));
+    const element = event.target as HTMLElement;
+    this.setState(() => calculate(this.state.obj, element.innerText));
   };
+  
   render(): React.ReactNode {
     const keys = this.state.keys.map((key) => (
-      <Key area={key.area} keyValue={key.value} />
+      <Key
+        area={key.area}
+        keyValue={key.value}
+        ClickEvent={this.onClickListener}
+      />
     ));
     return (
       <section className="calc">
