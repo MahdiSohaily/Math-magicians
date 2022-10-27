@@ -13,10 +13,10 @@ export default function operate(
   if (operation === '-') {
     return one.minus(two).toString();
   }
-  if (operation === 'x') {
+  if (operation === '*') {
     return one.times(two).toString();
   }
-  if (operation === '÷') {
+  if (operation === '/') {
     try {
       return one.div(two).toString();
     } catch (err) {

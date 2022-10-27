@@ -17,11 +17,11 @@ export default function calculate(
   obj: { total: string; next: string; operation: string },
   buttonName: string
 ) {
-  if (buttonName === 'RESET') {
+  if (buttonName === 'RESET' || buttonName === 'DEL') {
     return {
-      total: null,
-      next: null,
-      operation: null,
+      total: '',
+      next: '',
+      operation: '',
     };
   }
 
@@ -40,12 +40,12 @@ export default function calculate(
     if (obj.next && obj.next !== '0') {
       return {
         next: obj.next + buttonName,
-        total: null,
+        total: '',
       };
     }
     return {
       next: buttonName,
-      total: null,
+      total: '',
     };
   }
 
@@ -72,8 +72,8 @@ export default function calculate(
     if (obj.next && obj.operation) {
       return {
         total: operate(obj.total, obj.next, obj.operation),
-        next: null,
-        operation: null,
+        next: '',
+        operation: '',
       };
     }
     // '=' with no operation, nothing to do
@@ -115,7 +115,7 @@ export default function calculate(
 
     return {
       total: operate(obj.total, obj.next, obj.operation),
-      next: null,
+      next: '',
       operation: buttonName,
     };
   }
@@ -130,7 +130,7 @@ export default function calculate(
   // save the operation and shift 'next' into 'total'
   return {
     total: obj.next,
-    next: null,
+    next: '',
     operation: buttonName,
   };
 }

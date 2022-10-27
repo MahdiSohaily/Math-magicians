@@ -25,7 +25,7 @@ class Calculator extends React.Component {
       { id: 17, area: 'reset', value: 'RESET' },
       { id: 18, area: 'equal', value: '=' },
     ],
-    obj: { total: '0', next: '', operation: '' },
+    obj: { total: '', next: '', operation: '' },
   };
 
   onClickListener = (event: React.MouseEvent<HTMLElement>) => {
@@ -33,8 +33,7 @@ class Calculator extends React.Component {
     const buttonName = element.getAttribute('data-key')!
       ? element.getAttribute('data-key')!
       : '';
-    this.setState(() => calculate(this.state.obj, buttonName));
-    console.log(calculate(this.state.obj, buttonName));
+    this.setState({ obj: calculate(this.state.obj, buttonName) });
   };
 
   render(): React.ReactNode {
