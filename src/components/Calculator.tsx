@@ -31,13 +31,13 @@ class Calculator extends React.Component {
     const element = event.target as HTMLElement;
     this.setState(() => calculate(this.state.obj, element.innerText));
   };
-  
+
   render(): React.ReactNode {
     const keys = this.state.keys.map((key) => (
       <Key
         area={key.area}
         keyValue={key.value}
-        ClickEvent={this.onClickListener}
+        clickEvent={this.onClickListener}
       />
     ));
     return (
