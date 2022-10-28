@@ -27,7 +27,13 @@ class Calculator extends Component {
       obj: { total: '', next: '', operation: '' },
     };
   
- 
+    onClickListener = (event: React.MouseEvent<HTMLElement>) => {
+        const element = event.target as HTMLElement;
+        const buttonName = element.getAttribute('data-key')!
+          ? element.getAttribute('data-key')!
+          : '';
+        this.setState({ obj: calculate(this.state.obj, buttonName) });
+      };
     
       render(): React.ReactNode {
         const keys = this.state.keys.map((key) => (
