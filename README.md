@@ -38,7 +38,8 @@ Users should be able to:
 In order to install and run the project in your local machine follow the
 following steps:
 
-```git clone https://github.com/MahdiSohaily/Math-magicians.git
+```
+git clone https://github.com/MahdiSohaily/Math-magicians.git
 cd Math-magicians
 npm install
 npm start
