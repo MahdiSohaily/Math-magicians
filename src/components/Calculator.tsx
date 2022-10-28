@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React from 'react';
+import React, { useState } from 'react';
 import Screen from './Screen';
 import Key from './Key';
 import calculate from '../logic/calculate';
