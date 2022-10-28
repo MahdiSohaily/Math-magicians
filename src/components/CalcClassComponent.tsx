@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Screen from './Screen';
 import Key from './Key';
 import calculate from '../logic/calculate';
-class Calculator extends React.Component {
+class Calculator extends Component {
     state = {
       keys: [
         { id: 1, area: 'seven', value: '7' },
@@ -27,36 +27,4 @@ class Calculator extends React.Component {
       obj: { total: '', next: '', operation: '' },
     };
   
-    onClickListener = (event: React.MouseEvent<HTMLElement>) => {
-      const element = event.target as HTMLElement;
-      const buttonName = element.getAttribute('data-key')!
-        ? element.getAttribute('data-key')!
-        : '';
-      this.setState({ obj: calculate(this.state.obj, buttonName) });
-    };
-  
-    render(): React.ReactNode {
-      const keys = this.state.keys.map((key) => (
-        <Key
-          key={key.id}
-          area={key.area}
-          keyValue={key.value}
-          clickEvent={this.onClickListener}
-        />
-      ));
-      return (
-        <section className="calc">
-          <Screen
-            total={this.state.obj.total}
-            operation={this.state.obj.operation}
-            next={this.state.obj.next}
-          />
-          <div className="numbers-container bg-toggle mt-6 p-8 rounded">
-            {keys}
-          </div>
-        </section>
-      );
-    }
-  }
-  
-  export default Calculator;
+    
