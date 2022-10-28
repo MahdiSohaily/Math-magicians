@@ -39,14 +39,25 @@ const hooks = () => {
     setOperation(calculate(operation, buttonName));
   };
 
-  const keys = keys.map((key) => (
+  const keys = keysData.map((key) => (
     <Key
       key={key.id}
       area={key.area}
       keyValue={key.value}
-      clickEvent={this.onClickListener}
+      clickEvent={onClickListener}
     />
   ));
+
+  return (
+    <section className="calc">
+      <Screen
+        total={operation.total}
+        operation={operation.operation}
+        next={operation.next}
+      />
+      <div className="numbers-container bg-toggle mt-6 p-8 rounded">{keys}</div>
+    </section>
+  );
 };
 class Calculator extends React.Component {
   state = {
