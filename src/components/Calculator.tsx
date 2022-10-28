@@ -3,6 +3,22 @@ import React, { useState } from 'react';
 import Screen from './Screen';
 import Key from './Key';
 import calculate from '../logic/calculate';
+
+const hooks = () => {
+  const [operation, setOperation] = useState({
+    total: '',
+    next: '',
+    operation: '',
+  });
+
+  const onClickListener = (event: React.MouseEvent<HTMLElement>) => {
+    const element = event.target as HTMLElement;
+    const buttonName = element.getAttribute('data-key')!
+      ? element.getAttribute('data-key')!
+      : '';
+    setOperation(calculate(operation, buttonName));
+  };
+};
 class Calculator extends React.Component {
   state = {
     keys: [
