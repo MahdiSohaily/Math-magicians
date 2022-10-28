@@ -33,6 +33,17 @@ Users should be able to:
 | -------------------------------------------- |
 | ![Solution Screenshot](./design/desktop.png) |
 
+### Run the project Locally
+
+In order to install and run the project in your local machine follow the
+following steps:
+
+```git clone https://github.com/MahdiSohaily/Math-magicians.git
+cd Math-magicians
+npm install
+npm start
+```
+
 ## My process
 
 ### Built with
