@@ -5,6 +5,26 @@ import Key from './Key';
 import calculate from '../logic/calculate';
 
 const hooks = () => {
+  const keysData = [
+    { id: 1, area: 'seven', value: '7' },
+    { id: 2, area: 'eight', value: '8' },
+    { id: 3, area: 'nine', value: '9' },
+    { id: 4, area: 'del', value: 'DEL' },
+    { id: 5, area: 'four', value: '4' },
+    { id: 6, area: 'five', value: '5' },
+    { id: 7, area: 'six', value: '6' },
+    { id: 8, area: 'plus', value: '+' },
+    { id: 9, area: 'one', value: '1' },
+    { id: 10, area: 'two', value: '2' },
+    { id: 11, area: 'three', value: '3' },
+    { id: 12, area: 'subtract', value: '-' },
+    { id: 13, area: 'dot', value: '.' },
+    { id: 14, area: 'zero', value: '0' },
+    { id: 15, area: 'divide', value: '/' },
+    { id: 16, area: 'multiple', value: '*' },
+    { id: 17, area: 'reset', value: 'RESET' },
+    { id: 18, area: 'equal', value: '=' },
+  ];
   const [operation, setOperation] = useState({
     total: '',
     next: '',
