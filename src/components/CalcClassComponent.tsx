@@ -27,4 +27,30 @@ class Calculator extends Component {
       obj: { total: '', next: '', operation: '' },
     };
   
+ 
     
+      render(): React.ReactNode {
+        const keys = this.state.keys.map((key) => (
+          <Key
+            key={key.id}
+            area={key.area}
+            keyValue={key.value}
+            clickEvent={this.onClickListener}
+          />
+        ));
+        return (
+          <section className="calc">
+            <Screen
+              total={this.state.obj.total}
+              operation={this.state.obj.operation}
+              next={this.state.obj.next}
+            />
+            <div className="numbers-container bg-toggle mt-6 p-8 rounded">
+              {keys}
+            </div>
+          </section>
+        );
+      }
+    }
+    
+    export default Calculator;
