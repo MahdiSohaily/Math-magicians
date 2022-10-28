@@ -16,7 +16,7 @@ function isNumber(item: string) {
 export default function calculate(
   obj: { total: string; next: string; operation: string },
   buttonName: string
-) {
+): { total: string; next: string; operation: string } {
   if (buttonName === 'RESET' || buttonName === 'DEL') {
     return {
       total: '',
@@ -27,7 +27,7 @@ export default function calculate(
 
   if (isNumber(buttonName)) {
     if (buttonName === '0' && obj.next === '0') {
-      return {};
+      return { total: '', next: '', operation: '' };
     }
     // If there is an operation, update next
     if (obj.operation) {
@@ -41,11 +41,13 @@ export default function calculate(
       return {
         next: obj.next + buttonName,
         total: '',
+        operation: '',
       };
     }
     return {
       next: buttonName,
       total: '',
+      operation: '',
     };
   }
 
@@ -61,7 +63,7 @@ export default function calculate(
     }
     if (obj.total) {
       if (obj.total.includes('.')) {
-        return {};
+        return { total: '', next: '', operation: '' };
       }
       return { ...obj, next: `${obj.total}.` };
     }
@@ -77,7 +79,7 @@ export default function calculate(
       };
     }
     // '=' with no operation, nothing to do
-    return {};
+    return { total: '', next: '', operation: '' };
   }
 
   if (buttonName === '+/-') {
@@ -87,7 +89,7 @@ export default function calculate(
     if (obj.total) {
       return { ...obj, total: (-1 * parseFloat(obj.total)).toString() };
     }
-    return {};
+    return { total: '', next: '', operation: '' };
   }
 
   // Button must be an operation
@@ -110,7 +112,7 @@ export default function calculate(
     }
 
     if (!obj.total) {
-      return { total: 0, operation: buttonName };
+      return { total: '0', operation: buttonName, next: '' };
     }
 
     return {
@@ -124,7 +126,7 @@ export default function calculate(
 
   // The user hasn't typed a number yet, just save the operation
   if (!obj.next) {
-    return { operation: buttonName };
+    return { total: '', operation: buttonName, next: '' };
   }
 
   // save the operation and shift 'next' into 'total'
