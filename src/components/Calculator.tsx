@@ -18,6 +18,15 @@ const hooks = () => {
       : '';
     setOperation(calculate(operation, buttonName));
   };
+
+  const keys = keys.map((key) => (
+    <Key
+      key={key.id}
+      area={key.area}
+      keyValue={key.value}
+      clickEvent={this.onClickListener}
+    />
+  ));
 };
 class Calculator extends React.Component {
   state = {
