@@ -1,7 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { Outlet, NavLink } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <div>Navbar</div>
-  )
+    <>
+      <nav className="navBar">
+        <ul className={`menuNav`}>
+          <li>
+            <NavLink to="/">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/About">
+              About
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+
+      <Outlet />
+    </>
+  );
 }
