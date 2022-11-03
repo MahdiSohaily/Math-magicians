@@ -4,7 +4,8 @@ import { Outlet, NavLink } from 'react-router-dom';
 export default function Navbar() {
   return (
     <>
-      <nav className="navBar">
+      <nav className="navBar p-8">
+        <p className='logo'>Math Magicians</p>
         <ul className={`menuNav`}>
           <li>
             <NavLink to="/">
