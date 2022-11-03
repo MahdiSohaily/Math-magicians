@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function noMatch() {
+export default function NoMatch() {
   return (
     <div>noMatch</div>
   )
