@@ -5,7 +5,7 @@ import Navbar from './pages/Navbar';
 import App from './App';
 import Home from './pages/Home';
 import Quote from './pages/Quote';
-import NoMatch from './pages/noMatch';
+import NotFound from './pages/NotFound';
 import './styles/index.css';
 
 const root = ReactDOM.createRoot(
@@ -20,10 +20,9 @@ root.render(
           <Route index element={<Home />} />
           <Route path="calculator" element={<App />} />
           <Route path="quote" element={<Quote />} />
-          <Route path="*" element={<NoMatch />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>
-    <App />
   </React.StrictMode>
 );

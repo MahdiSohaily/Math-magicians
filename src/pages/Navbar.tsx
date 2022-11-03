@@ -12,8 +12,13 @@ export default function Navbar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/About">
-              About
+            <NavLink to="/calculator">
+              Calculator
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/quote">
+              Quote
             </NavLink>
           </li>
         </ul>
