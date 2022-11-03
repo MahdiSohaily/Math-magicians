@@ -49,14 +49,21 @@ const Calculator = () => {
   ));
 
   return (
-    <section className="calc">
-      <Screen
-        total={operation.total}
-        operation={operation.operation}
-        next={operation.next}
-      />
-      <div className="numbers-container bg-toggle mt-6 p-8 rounded">{keys}</div>
-    </section>
+    <div className=' calculator'>
+      <div className="p-8 introduction">
+        <h1>Let's do some Math!</h1>
+      </div>
+      <section className="calc">
+        <Screen
+          total={operation.total}
+          operation={operation.operation}
+          next={operation.next}
+        />
+        <div className="numbers-container bg-toggle mt-6 p-8 rounded">
+          {keys}
+        </div>
+      </section>
+    </div>
   );
 };
 

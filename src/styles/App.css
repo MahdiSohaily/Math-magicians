@@ -111,6 +111,11 @@ select {
 }
 
 /* ------------------ START COMPONENT CLASSES----------------------- */
+.calculator {
+  display: flex;
+  justify-content: space-between;
+}
+
 .calc {
   width: 540px;
   margin: 1rem;
@@ -340,7 +345,7 @@ select {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .menuNav {
