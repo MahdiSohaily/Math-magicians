@@ -16,3 +16,8 @@ test('Subtract 12 - 4 to equal 8', () => {
 test('Multiply 4 * 12 to equal 48', () => {
     expect(operate('12', '4', '*')).toBe('48');
   });
+
+  // test subtraction dividing
+test('Multiply 12 / 4 to equal 3', () => {
+    expect(operate('12', '4', '/')).toBe('3');
+  });
