@@ -11,3 +11,8 @@ test('adds 3 + 4 to equal 7', () => {
 test('Subtract 12 - 4 to equal 8', () => {
     expect(operate('12', '4', '-')).toBe('8');
   });
+
+// test subtraction Multiply
+test('Multiply 4 * 12 to equal 48', () => {
+    expect(operate('12', '4', '*')).toBe('48');
+  });
