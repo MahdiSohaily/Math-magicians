@@ -111,6 +111,11 @@ select {
 }
 
 /* ------------------ START COMPONENT CLASSES----------------------- */
+.calculator {
+  display: flex;
+  justify-content: space-between;
+}
+
 .calc {
   width: 540px;
   margin: 1rem;
@@ -333,3 +338,33 @@ select {
 }
 
 /* ------------------ END UTILITY CLASSES----------------------- */
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 30px;
+}
+
+.menuNav {
+  display: flex;
+  list-style-type: none;
+  gap: var(--size-300);
+}
+
+.menuNav li a {
+  text-decoration: none;
+  color: var(--main-bg);
+}
+
+.quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-text {
+  max-width: 54ch;
+}
